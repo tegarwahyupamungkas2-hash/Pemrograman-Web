@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Pengeluaran Harian</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <p class="label">KEUANGAN PRIBADI</p>
+            <h1>Kalkulator Pengeluaran</h1>
+            <p>Catatan Keuangan Harian Mahasiswa</p>
+        </header>
+
+        <section class="summary">
+            <div class="card">
+                <p>Anggaran</p>
+                <h2 id="budgetDisplay">Rp100.000</h2>
+            </div>
+
+            <div class="card">
+                <p>Total Pengeluaran</p>
+                <h2 id="totalDisplay">Rp0</h2>
+            </div>
+
+            <div class="card">
+                <p>Sisa Uang</p>
+                <h2 id="remainingDisplay">Rp100.000</h2>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Atur Anggaran</h2>
+
+            <div class="budget-form">
+                <input type="number" id="budgetInput"
+                    min="0" value="100000" placeholder="Masukkan anggaran">
+
+                <button type="button" id="setBudgetButton">
+                    Simpan Anggaran
+                </button>
+            </div>
+
+            <p id="budgetStatus" class="status">
+                Pengeluaran masih terkendali.
+            </p>
+        </section>
+
+        <section class="panel">
+            <h2>Tambah Pengeluaran</h2>
+
+            <form id="expenseForm">
+                <label for="amount">Jumlah Pengeluaran (Rp)</label>
+                <input type="number" id="amount"
+                    min="1" step="1" placeholder="Contoh: 15000" required>
+
+                <label for="category">Kategori</label>
+                <select id="category" required>
+                    <option value="Makanan">Makanan</option>
+                    <option value="Transportasi">Transportasi</option>
+                    <option value="Belanja">Belanja</option>
+                    <option value="Kuliah">Keperluan Kuliah</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+
+                <label for="note">Keterangan</label>
+                <input type="text" id="note"
+                    placeholder="Contoh: Beli makan siang" required>
+
+                <button type="submit" class="add-button">
+                    Tambah Pengeluaran
+                </button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="list-heading">
+                <h2>Riwayat Pengeluaran</h2>
+                <button type="button" id="clearButton" class="clear-button">
+                    Hapus Semua
+                </button>
+            </div>
+
+            <div id="expenseList"></div>
+            <p id="emptyMessage" class="empty">
+                Belum ada pengeluaran yang dicatat.
+            </p>
+        </section>
+
+        <footer>
+            <p>Program sederhana untuk mengatur keuangan sehari-hari.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
